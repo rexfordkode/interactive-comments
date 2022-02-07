@@ -4,7 +4,9 @@ import './components/Dialog.js'
 
 function App() {
   return (
-  
+  <div>
+    
+  </div>
     
   );
 }
