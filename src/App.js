@@ -1,5 +1,6 @@
 
 import './App.css';
+import './component/Dialog.js'
 
 function App() {
   return (
