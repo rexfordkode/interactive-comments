@@ -26,5 +26,44 @@ export default function Comment({
         setCurrent(curr);
     }, [currentUser, username]);
 
-    
+    return (
+        <>
+        {
+            <div className='comment'>
+                <div className='scoreColumn'>
+                    {
+                        current
+                        ?
+                        <>
+                        <img className='flex-item upvote disabled-upvote' src = './images/icon-plus.svg' alt="upvote" />
+                        <span className='flex-item'>{score}</span>
+                        <img className='flex-item downvote disabled-upvote' src='./images/icon-minus.svg' alt="downvote" />
+                        </>
+                        :
+                        <>
+                        <img className="flex-item upvote" src='./images/icon-plus.svg' alt="upvote" onClick={() => {
+                        if (!vote) {
+                            updateScore(id, 'upvote');
+                            setVote(true);}
+                        }}/>
+                        <span className="flex-item">{score}</span>
+                        <img className="flex-item downvote" src='./images/icon-minus.svg' alt="downvote" onClick={() => {
+                            if (!vote) {
+                                updateScore(id, 'downvote');
+                                setVote(true);}
+                            }}
+                        />
+                        </>
+                    }
+                </div>
+                <div className='contentColumn'>
+                    
+                </div>
+            </div>
+        }
+        </>
+    )
+
+
+
 }
