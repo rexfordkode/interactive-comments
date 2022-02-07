@@ -21,4 +21,10 @@ export default function Comment({
     const [edit, setEdit] = useState(false);
     const [current, setCurrent] = useState(false);
     
+    useEffect(() => {
+        const curr = username === currentUser.username;
+        setCurrent(curr);
+    }, [currentUser, username]);
+
+    
 }
