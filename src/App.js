@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import JSONdata from './data';
-import './components/Dialog.js'
 
 const App = () => {
   const [data, setData] = useState(JSONdata);
