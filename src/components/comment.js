@@ -1,6 +1,5 @@
 import { useEffect, useState} from 'react';
 import NewReply from './NewReply';
-import  './comment.css';
 
 export default function Comment({
     id, 
