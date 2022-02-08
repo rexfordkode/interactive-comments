@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import DeleteModal from "./components/DeleteModal";
+import DeleteModal from "./components/deleteModal";
 import NewComment from "./components/newComment";
 import JSONdata from "./data";
 
