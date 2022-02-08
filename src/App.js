@@ -1,13 +1,20 @@
-
+import React, { useState } from 'react';
 import './App.css';
+import JSONdata from './data';
 import './components/Dialog.js'
 
-function App() {
+const App = () => {
+  const [data, setData] = useState(JSONdata);
+
   return (
-  <div>
-    
-  </div>
-    
+    <div className='comments-column'>
+      {data.comments.map((comment) => {
+        return (
+          {/* Comment Component */}
+        )
+      })}
+      {/* New Comment Component */}
+    </div>
   );
 }
 
