@@ -1,0 +1,52 @@
+.comment {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-areas: "score content";
+    background-color: white;
+    padding: 30px;
+    margin-top: 20px;
+    column-gap: 10px;
+    border-radius: 10px;
+}
+
+.scoreColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    background-color: var(--grey-background);
+    width: 40px;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.flex-item {
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.avatar {
+    max-width: 30px;
+    height: auto;
+}
+
+.username, .timestamp {
+    margin-left: 10px;
+  }
+
+.replyButton, .editButton {
+    position: absolute;
+    right: 30px;
+}
+
+.deleteButton, .editButton, .replyButton, .upvote, .downvote, .updateButton {
+    cursor: pointer;
+}
+
+.deleteButton {
+    color: hsl(358, 79%, 66%);
+    position: absolute;
+    right: 100px;
+}
