@@ -1,0 +1,39 @@
+/* This is for styling in newReply */
+.newComment {
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr;
+    margin-top: 30px;
+    column-gap: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: white;
+}
+.replyInput{
+    color: hsl(212, 24%, 26%);
+    resize: none;
+    border: 2px solid  hsl(223, 24%, 93%);
+    width: 100%;
+    padding: 5px;
+    height: 90px;
+    border-radius: 10px;
+}
+
+.avatarReply{
+    max-width: 40px;
+    height: auto;
+}
+
+.sendColumn {
+    padding-right: 50px;
+}
+.sendButton {
+    font-size: large;
+    color: white;
+    background-color:hsl(238, 40%, 52%);
+    border-color: transparent;
+    border-radius: 10px;
+    width: 110px;
+    height: 50px;
+    cursor: pointer;
+    left: 50px;
+}
