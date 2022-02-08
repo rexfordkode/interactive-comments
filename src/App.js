@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import NewComment from './components/newComment';
 import JSONdata from './data';
+
 // Import Comment, NewComment, DeleteModal
 
 
@@ -109,7 +111,11 @@ const App = () => {
           {/* Comment Component */}
         )
       })}
-      {/* New Comment Component */}
+
+      <NewComment 
+        addNewComment={addNewComment}
+        currentUser={data.currentUser}
+      />
     </div>
   );
 }
