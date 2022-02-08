@@ -20,11 +20,11 @@ const App = () => {
     for (let comment of temp.comments) {
       if (comment.id === id) {
         comment.replies.push({
-          id: currentId + 1,
-          content: content,
-          createdAt: "Just now",
-          score: 0,
-          replyingTo: comment.user.username,
+          'id': currentId + 1,
+          'content': content,
+          'createdAt': "Just now",
+          'score': 0,
+          'replyingTo': comment.user.username,
           user: { ...data.currentUser },
         });
         break;
@@ -33,12 +33,12 @@ const App = () => {
         for (let reply of comment.replies) {
           if (reply.id === id) {
             comment.replies.push({
-              id: currentId + 1,
-              content: content,
-              createdAt: "Just now",
-              score: 0,
-              replyingTo: reply.user.username,
-              user: { ...data.currentUser },
+              'id': currentId + 1,
+              'content': content,
+              'createdAt': "Just now",
+              'score': 0,
+              'replyingTo': reply.user.username,
+              'user': { ...data.currentUser },
             });
             break;
           }
@@ -94,12 +94,12 @@ const App = () => {
     let temp = data;
     currentId += 1;
     temp.comments.push({
-      id: currentId + 1,
-      content: content,
-      createdAt: "Just now",
-      score: 0,
-      user: { ...data.currentUser },
-      replies: [],
+      'id': currentId + 1,
+      'content': content,
+      'createdAt': "Just now",
+      'score': 0,
+      'user': { ...data.currentUser },
+      'replies': [],
     });
     setData({ ...temp });
   };
