@@ -1,4 +1,3 @@
-/* This is for styling in newReply */
 .newComment {
     display: grid;
     grid-template-columns: 1fr 8fr 2fr;
@@ -18,22 +17,66 @@
     border-radius: 10px;
 }
 
-.avatarReply{
+
+.avatarReply {
     max-width: 40px;
     height: auto;
 }
 
-.sendColumn {
-    padding-right: 50px;
-}
 .sendButton {
     font-size: large;
     color: white;
-    background-color:hsl(238, 40%, 52%);
+    background-color: hsl(238, 40%, 52%);
     border-color: transparent;
     border-radius: 10px;
     width: 110px;
     height: 50px;
     cursor: pointer;
-    left: 50px;
+    position: relative;
+    left:50px;
+}
+
+.replyInput {
+    color: hsl(212, 24%, 26%);;
+    resize: none;
+    border: 2px solid hsl(223, 19%, 93%);
+    width: 100%;
+    padding: 5px;
+    height: 90px;
+    border-radius: 10px;
+}
+
+.replyInput:focus {
+    outline: none;
+    border: 1px solid hsl(238, 40%, 52%);
+}
+
+@media (max-width: 500px) {
+    .newComment {
+        display: grid;
+        background-color: white;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        padding-bottom: 80px;
+        padding-top: 20px;
+    }
+    
+    .avatarReply {
+        position: absolute;
+        left: 20px;
+    }
+
+    .sendColumn {
+        position: absolute;
+        right: 20px;
+        bottom: 15px;
+    }
+    
+    .avatarReply{
+        bottom: 15px;
+    }
+
+    .replyInput {
+        height: 90px;
+    }
 }
