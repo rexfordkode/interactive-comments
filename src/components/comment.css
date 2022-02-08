@@ -100,3 +100,34 @@
     width: 35px;
     height: 18px;
 }
+
+.reply-username {
+    font-weight: 900;
+}
+
+.disabled-upvote {
+    cursor: default !important;
+}
+
+.disabled {
+    cursor: default !important;
+    opacity: 50% !important;
+}
+
+.updateRow {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.updateButton {
+    position: absolute!important;
+    margin-right: 15px;
+    right: 0px;
+    font-size: large;
+    color: white;
+    background-color: hsl(238, 40%, 52%);
+    border-color: transparent;
+    border-radius: 10px;
+    width: 110px;
+    height: 50px;
+}
