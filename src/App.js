@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './App.css';
-import NewComment from './components/newComment';
-import JSONdata from './data';
+import React, { useState } from "react";
+import "./App.css";
+import DeleteModal from "./components/DeleteModal";
+import NewComment from "./components/newComment";
+import JSONdata from "./data";
 
-// Import Comment, NewComment, DeleteModal
-
+// Import Comment
 
 let currentId = 5;
 
@@ -14,18 +14,18 @@ const App = () => {
 
   // Add New Reply
   const addNewReply = (id, content) => {
-    if (!/\S/.test(content)) return;  
+    if (!/\S/.test(content)) return;
     let temp = data;
     currentId += 1;
     for (let comment of temp.comments) {
-        if (comment.id === id) {
+      if (comment.id === id) {
         comment.replies.push({
-          'id': currentId + 1,
-          'content': content,
-          'createdAt': 'Just now',
-          'score': 0,
-          'replyingTo': comment.user.username,
-          'user': {...data.currentUser}
+          id: currentId + 1,
+          content: content,
+          createdAt: "Just now",
+          score: 0,
+          replyingTo: comment.user.username,
+          user: { ...data.currentUser },
         });
         break;
       }
@@ -33,40 +33,40 @@ const App = () => {
         for (let reply of comment.replies) {
           if (reply.id === id) {
             comment.replies.push({
-              'id': currentId + 1,
-              'content': content,
-              'createdAt': 'Just now',
-              'score': 0,
-              'replyingTo': reply.user.username,
-              'user': {...data.currentUser}
+              id: currentId + 1,
+              content: content,
+              createdAt: "Just now",
+              score: 0,
+              replyingTo: reply.user.username,
+              user: { ...data.currentUser },
             });
             break;
           }
         }
       }
     }
-    setData({...temp}); 
-  }
+    setData({ ...temp });
+  };
 
   // Update Score
   const updateScore = (id, action) => {
     let temp = data;
     for (let comment of temp.comments) {
-      if (comment.id === id){
-        action === 'upvote' ? comment.score += 1 : comment.score -= 1; 
+      if (comment.id === id) {
+        action === "upvote" ? (comment.score += 1) : (comment.score -= 1);
         break;
       }
       if (comment.replies.length > 0) {
         for (let reply of comment.replies) {
           if (reply.id === id) {
-            action === 'upvote' ? reply.score += 1 : reply.score -= 1; 
+            action === "upvote" ? (reply.score += 1) : (reply.score -= 1);
             break;
           }
         }
       }
     }
-    setData({...temp});
-  }
+    setData({ ...temp });
+  };
 
   // Update Comment
   const updateComment = (updatedContent, id) => {
@@ -75,7 +75,7 @@ const App = () => {
       if (comment.id === id) {
         comment.content = updatedContent;
         break;
-      } 
+      }
       if (comment.replies.length > 0) {
         for (let reply of comment.replies) {
           if (reply.id === id) {
@@ -85,8 +85,8 @@ const App = () => {
         }
       }
     }
-    setData({...temp});
-  }
+    setData({ ...temp });
+  };
 
   // Add New Comment
   const addNewComment = (content) => {
@@ -94,30 +94,41 @@ const App = () => {
     let temp = data;
     currentId += 1;
     temp.comments.push({
-      'id': currentId + 1,
-      'content': content,
-      'createdAt': 'Just now',
-      'score': 0,
-      'user': {...data.currentUser},
-      'replies': []
+      id: currentId + 1,
+      content: content,
+      createdAt: "Just now",
+      score: 0,
+      user: { ...data.currentUser },
+      replies: [],
     });
-    setData({...temp});
-  }
+    setData({ ...temp });
+  };
 
   return (
-    <div className='comments-column'>
-      {data.comments.map((comment) => {
-        return (
-          {/* Comment Component */}
-        )
-      })}
+    <>
+      {deleteComment !== false && (
+        <DeleteModal
+          id={deleteComment}
+          setDeleteComment={setDeleteComment}
+          setData={setData}
+          data={data}
+        />
+      )}
 
-      <NewComment 
-        addNewComment={addNewComment}
-        currentUser={data.currentUser}
-      />
-    </div>
+      <div className="comments-column">
+        {data.comments.map((comment) => {
+          return {
+            /* Comment Component */
+          };
+        })}
+
+        <NewComment
+          addNewComment={addNewComment}
+          currentUser={data.currentUser}
+        />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
