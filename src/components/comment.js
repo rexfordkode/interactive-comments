@@ -158,9 +158,7 @@ const Comment = ({
                 {comment}
               </div>
             )}
-          </div>{" "}
-          {/* contentColumn*/}
-          {/* comment*/}
+          </div>
         </div>
       }
       {newReply !== false && (
@@ -199,3 +197,5 @@ const Comment = ({
     </>
   );
 };
+
+export default Comment;

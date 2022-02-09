@@ -30,6 +30,10 @@
   left: 50px;
 }
 
+.sendButton:hover {
+  opacity: 0.55;
+}
+
 .replyInput {
   color: hsl(212, 24%, 26%);
   resize: none;

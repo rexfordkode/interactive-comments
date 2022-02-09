@@ -24,7 +24,7 @@
   justify-content: center;
   background-color: var(--grey-background);
   width: 40px;
-  gap: 5px; /* modified */
+  gap: 8px; /* modified */
   border-radius: 10px;
 }
 
@@ -49,6 +49,12 @@
   right: 30px;
 }
 
+.deleteButton:hover,
+.editButton:hover,
+.replyButton:hover {
+  opacity: 0.55;
+}
+
 .deleteButton,
 .editButton,
 .replyButton,
@@ -64,14 +70,16 @@
   right: 100px;
 }
 
-/* ======= FONTS AND TYPOLOGY ======== */
-
 .username,
 .replyButton,
 .flex-item,
 .editButton,
 .deleteButton {
   font-weight: 700;
+}
+
+.commentContent {
+  min-height: 50px;
 }
 
 .commentContent,
@@ -125,7 +133,6 @@
   height: 18px;
 }
 
-/* change color of selected text cuz it's cool */
 ::-moz-selection {
   background: hsl(240, 6%, 90%);
 }
@@ -234,5 +241,26 @@
 @media (max-width: 760px) {
   .adjust-width {
     width: auto;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 370px) {
+  .comment {
+    padding: 20px;
+  }
+  .username,
+  .timestamp {
+    font-size: 14px;
+  }
+  .scoreColumn {
+    width: 70px;
+    border-radius: 8px;
+  }
+  .deleteButton,
+  .editButton {
+    font-size: 14px;
+  }
+  .deleteButton {
+    right: 82px;
   }
 }
