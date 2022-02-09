@@ -1,31 +1,28 @@
-import React, { useState } from "react";
 import "./App.css";
-import Comment from "./components/comment";
-import DeleteModal from "./components/deleteModal";
-import NewComment from "./components/newComment";
-import JSONdata from "./data.json";
+import JSONdata from "./data";
+import { useState } from "react";
 
-// Import Comment
+import Comment from "./components/Comment";
+import NewComment from "./components/NewComment";
+import DeleteModal from "./components/DeleteModal";
+let currentId = 5; // ¯\_(ツ)_/¯
 
-let currentId = 5;
-
-const App = () => {
+function App() {
   const [data, setData] = useState(JSONdata);
   const [deleteComment, setDeleteComment] = useState(false);
 
-  // Add New Reply
   const addNewReply = (id, content) => {
-    if (!/\S/.test(content)) return;
+    if (!/\S/.test(content)) return; // to avoid posting empty comments (only whitespaces)
     let temp = data;
     currentId += 1;
     for (let comment of temp.comments) {
       if (comment.id === id) {
         comment.replies.push({
-          'id': currentId + 1,
-          'content': content,
-          'createdAt': "Just now",
-          'score': 0,
-          'replyingTo': comment.user.username,
+          id: currentId + 1,
+          content: content,
+          createdAt: "Just now",
+          score: 0,
+          replyingTo: comment.user.username,
           user: { ...data.currentUser },
         });
         break;
@@ -34,12 +31,12 @@ const App = () => {
         for (let reply of comment.replies) {
           if (reply.id === id) {
             comment.replies.push({
-              'id': currentId + 1,
-              'content': content,
-              'createdAt': "Just now",
-              'score': 0,
-              'replyingTo': reply.user.username,
-              'user': { ...data.currentUser },
+              id: currentId + 1,
+              content: content,
+              createdAt: "Just now",
+              score: 0,
+              replyingTo: reply.user.username,
+              user: { ...data.currentUser },
             });
             break;
           }
@@ -49,7 +46,6 @@ const App = () => {
     setData({ ...temp });
   };
 
-  // Update Score
   const updateScore = (id, action) => {
     let temp = data;
     for (let comment of temp.comments) {
@@ -69,7 +65,6 @@ const App = () => {
     setData({ ...temp });
   };
 
-  // Update Comment
   const updateComment = (updatedContent, id) => {
     let temp = data;
     for (let comment of temp.comments) {
@@ -89,18 +84,17 @@ const App = () => {
     setData({ ...temp });
   };
 
-  // Add New Comment
   const addNewComment = (content) => {
     if (!/\S/.test(content)) return;
     let temp = data;
     currentId += 1;
     temp.comments.push({
-      'id': currentId + 1,
-      'content': content,
-      'createdAt': "Just now",
-      'score': 0,
-      'user': { ...data.currentUser },
-      'replies': [],
+      id: currentId + 1,
+      content: content,
+      createdAt: "Just now",
+      score: 0,
+      user: { ...data.currentUser },
+      replies: [],
     });
     setData({ ...temp });
   };
@@ -116,7 +110,7 @@ const App = () => {
         />
       )}
 
-      <div className="comments-column">
+      <main className="comments-column">
         {data.comments.map((comment) => {
           return (
             <Comment
@@ -141,9 +135,9 @@ const App = () => {
           addNewComment={addNewComment}
           currentUser={data.currentUser}
         />
-      </div>
+      </main>
     </>
   );
-};
+}
 
 export default App;

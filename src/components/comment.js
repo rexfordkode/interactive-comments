@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import NewReply from "./newReply";
+import NewReply from "./NewReply";
 import "./comment.css";
 
 export default function Comment({
@@ -18,7 +18,12 @@ export default function Comment({
   addNewReply,
 }) {
   const [newReply, setNewReply] = useState(false);
-  const [vote, setVote] = useState(false);
+  //   modified
+  const [upVote, setUpVote] = useState(false);
+  const [downVote, setDownVote] = useState(false);
+  const [iconPlus, setIconPlus] = useState("./images/icon-plus.svg");
+  const [iconMinus, setIconMinus] = useState("./images/icon-minus.svg");
+
   const [edit, setEdit] = useState(false);
   const [current, setCurrent] = useState(false);
 
@@ -53,24 +58,36 @@ export default function Comment({
                 <>
                   <img
                     className="flex-item upvote"
-                    src="./images/icon-plus.svg"
+                    src={iconPlus}
                     alt="upvote"
                     onClick={() => {
-                      if (!vote) {
+                      if (!upVote) {
                         updateScore(id, "upvote");
-                        setVote(true);
+                        setUpVote(true);
+                        setIconPlus("./images/icon-plus-active.svg");
+                        setIconMinus("./images/icon-minus.svg");
+                      } else {
+                        updateScore(id, "downvote");
+                        setIconPlus("./images/icon-plus.svg");
+                        setUpVote(false);
                       }
                     }}
                   />
                   <span className="flex-item">{score}</span>
                   <img
                     className="flex-item downvote"
-                    src="./images/icon-minus.svg"
+                    src={iconMinus}
                     alt="downvote"
                     onClick={() => {
-                      if (!vote) {
+                      if (!downVote) {
                         updateScore(id, "downvote");
-                        setVote(true);
+                        setDownVote(true);
+                        setIconMinus("./images/icon-minus-active.svg");
+                        setIconPlus("./images/icon-plus.svg");
+                      } else {
+                        updateScore(id, "upvote");
+                        setIconMinus("./images/icon-minus.svg");
+                        setDownVote(false);
                       }
                     }}
                   />
