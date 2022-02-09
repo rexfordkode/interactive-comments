@@ -1,66 +1,56 @@
 import "./deleteModal.css";
 
-const DeleteModal = (id, setDeleteComment, data, setData) => {
-  const deleteComment = (id) => {
-    let temp = data;
-    for (let comment of temp.comments) {
+export default function DeleteModal({ id, setDeleteComment, setData, data }) {
+  const deleteComment = () => {
+    for (let comment of data.comments) {
       if (comment.id === id) {
-        temp.comments = temp.comments.filter(
-          (filComment) => filComment.id !== id
+        const updatedComments = data.comments.filter(
+          (comment) => comment.id !== id
         );
+        setData((data) => ({
+          currentUser: { ...data.currentUser },
+          comments: updatedComments,
+        }));
         break;
-      } else {
-        if (comment?.replies?.length > 0) {
-          findCommentToDelete(comment, comment.replies, id);
+      }
+      if (comment.replies.length > 0) {
+        for (let reply of comment.replies) {
+          if (reply.id === id) {
+            const updatedReplies = comment.replies.filter(
+              (reply) => reply.id !== id
+            );
+
+            comment.replies = updatedReplies;
+
+            setData((data) => ({
+              currentUser: { ...data.currentUser },
+              comments: data.comments,
+            }));
+            break;
+          }
         }
       }
     }
-    setData({ ...temp });
-  };
-  const findCommentToDelete = (parent, replies, id) => {
-    let temp = parent;
-    for (let reply of replies) {
-      if (reply.id === id) {
-        temp.replies = temp.replies.filter(
-          (filComment) => filComment.id !== id
-        );
-        break;
-      } else {
-        if (reply?.replies?.length > 0) {
-          findCommentToDelete(reply, reply.replies, id);
-        }
-      }
-    }
+    setDeleteComment(false);
   };
 
   return (
-    <div className="deleteModal">
-      <div className="deleteModalBox">
-        <h2 className="deleteModalTitle">Delete comment</h2>
-        <p className="deleteModalText">
+    <div className="modalBackground">
+      <div className="modal">
+        <div className="modalTitle">Delete comment</div>
+        <div className="modalContent">
           Are you sure you want to delete this comment? This will remove the
           comment and can't be undone.
-        </p>
-        <div className="deleteModalButtonsContainer">
-          <button
-            className="deleteModalButton cancelDeleteButton mouse-pointer"
-            onClick={() => setDeleteComment(false)}
-          >
+        </div>
+        <div className="buttonsRow">
+          <span id="cancel" onClick={() => setDeleteComment(false)}>
             NO, CANCEL
-          </button>
-          <button
-            className="deleteModalButton confirmDeleteButton mouse-pointer"
-            onClick={() => {
-              deleteComment(deleteComment.id);
-              setDeleteComment(false);
-            }}
-          >
+          </span>
+          <span id="confirm" onClick={() => deleteComment()}>
             YES, DELETE
-          </button>
+          </span>
         </div>
       </div>
     </div>
   );
-};
-
-export default DeleteModal;
+}
