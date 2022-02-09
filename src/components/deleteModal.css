@@ -1,0 +1,56 @@
+.deleteModal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    max-height: 120%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteModalBox {
+    background-color: white;
+    border-radius: var(--border-radius);
+}
+
+.deleteModalTitle {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+
+.deleteModalText {
+    line-height: 1.35rem;
+    color: var(--grayish-blue);
+}
+
+.deleteModalButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteModalButton {
+    font-weight: 500;
+    font-size: medium;
+    font-family: var(--font-fam);
+    color: white;
+    padding: 1rem 0.75rem;
+    width: 48%;
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.cancelDeleteButton {
+    background-color: var(--grayish-blue);
+}
+
+.confirmDeleteButton {
+    background-color: var(--soft-red);
+}
