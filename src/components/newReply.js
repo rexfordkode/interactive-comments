@@ -1,12 +1,7 @@
 import "./newComment.css";
 let reply;
 
-export default function NewReply({
-  setNewReply,
-  parentId,
-  addNewReply,
-  currentUser,
-}) {
+const NewReply = ({ setNewReply, parentId, addNewReply, currentUser }) => {
   return (
     <div className="newComment">
       <div className="avatarColumn">
@@ -40,4 +35,6 @@ export default function NewReply({
       </div>
     </div>
   );
-}
+};
+
+export default NewReply;
