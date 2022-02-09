@@ -18,14 +18,14 @@
 }
 
 .scoreColumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
-    background-color: var(--grey-background);
-    width: 40px;
-    gap: 5px; 
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  background-color: var(--grey-background);
+  width: 40px;
+  gap: 8px; /* modified */
+  border-radius: 10px;
 }
 
 .flex-item {
@@ -47,8 +47,19 @@
     right: 30px;
 }
 
-.deleteButton, .editButton, .replyButton, .upvote, .downvote, .updateButton {
-    cursor: pointer;
+.deleteButton:hover,
+.editButton:hover,
+.replyButton:hover {
+  opacity: 0.55;
+}
+
+.deleteButton,
+.editButton,
+.replyButton,
+.upvote,
+.downvote,
+.updateButton {
+  cursor: pointer;
 }
 
 .deleteButton {
@@ -57,14 +68,21 @@
     right: 100px;
 }
 
-/* ======= FONTS AND TYPOLOGY ======== */
-
-.username, .replyButton, .flex-item, .editButton, .deleteButton {
-    font-weight: 700;
+.username,
+.replyButton,
+.flex-item,
+.editButton,
+.deleteButton {
+  font-weight: 700;
 }
 
-.commentContent, .timestamp {
-    color: var(--text-color);
+.commentContent {
+  min-height: 50px;
+}
+
+.commentContent,
+.timestamp {
+  color: var(--text-color);
 }
 
 .username {
@@ -110,9 +128,12 @@
     color: white;
 }
 
-/* Changing color of selected text */
-::-moz-selection { background: hsl(240, 6%, 90%); }
-::selection { background: hsl(240, 6%, 90%); }
+::-moz-selection {
+  background: hsl(240, 6%, 90%);
+}
+::selection {
+  background: hsl(240, 6%, 90%);
+}
 
 .reply-username {
     font-weight: 900;
@@ -212,4 +233,25 @@
     .adjust-width {
         width: auto;
     }
+}
+
+@media (min-width: 200px) and (max-width: 370px) {
+  .comment {
+    padding: 20px;
+  }
+  .username,
+  .timestamp {
+    font-size: 14px;
+  }
+  .scoreColumn {
+    width: 70px;
+    border-radius: 8px;
+  }
+  .deleteButton,
+  .editButton {
+    font-size: 14px;
+  }
+  .deleteButton {
+    right: 82px;
+  }
 }

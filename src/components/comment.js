@@ -162,9 +162,7 @@ export default function Comment({
                 {comment}
               </div>
             )}
-          </div>{" "}
-          {/* contentColumn*/}
-          {/* comment*/}
+          </div>
         </div>
       }
       {newReply !== false && (
@@ -202,4 +200,6 @@ export default function Comment({
         })}
     </>
   );
-}
+};
+
+

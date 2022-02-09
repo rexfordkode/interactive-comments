@@ -43,12 +43,12 @@ const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
           comment and can't be undone.
         </div>
         <div className="buttonsRow">
-          <span id="cancel" onClick={() => setDeleteComment(false)}>
+          <button id="cancel" onClick={() => setDeleteComment(false)}>
             NO, CANCEL
-          </span>
-          <span id="confirm" onClick={() => deleteComment()}>
+          </button>
+          <button id="confirm" onClick={() => deleteComment()}>
             YES, DELETE
-          </span>
+          </button>
         </div>
       </div>
     </div>
