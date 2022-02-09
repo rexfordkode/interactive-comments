@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import NewReply from "./newReply";
 import "./comment.css";
 
-const Comment = ({
+export default function Comment({
   id,
   currentUser,
   replyingTo,
@@ -16,12 +16,13 @@ const Comment = ({
   updateComment,
   setDeleteComment,
   addNewReply,
-}) => {
+}) {
   const [newReply, setNewReply] = useState(false);
   const [vote, setVote] = useState(false);
   const [edit, setEdit] = useState(false);
   const [current, setCurrent] = useState(false);
 
+  // Evaluate to true or false and then render HTML accordingly
   useEffect(() => {
     const curr = username === currentUser.username;
     setCurrent(curr);
@@ -32,47 +33,50 @@ const Comment = ({
       {
         <div className="comment">
           <div className="scoreColumn">
-            {current ? (
-              <>
-                <img
-                  className="flex-item upvote disabled-upvote"
-                  src="./images/icon-plus.svg"
-                  alt="upvote"
-                />
-                <span className="flex-item">{score}</span>
-                <img
-                  className="flex-item downvote disabled-upvote"
-                  src="./images/icon-minus.svg"
-                  alt="downvote"
-                />
-              </>
-            ) : (
-              <>
-                <img
-                  className="flex-item upvote"
-                  src="./images/icon-plus.svg"
-                  alt="upvote"
-                  onClick={() => {
-                    if (!vote) {
-                      updateScore(id, "upvote");
-                      setVote(true);
-                    }
-                  }}
-                />
-                <span className="flex-item">{score}</span>
-                <img
-                  className="flex-item downvote"
-                  src="./images/icon-minus.svg"
-                  alt="downvote"
-                  onClick={() => {
-                    if (!vote) {
-                      updateScore(id, "downvote");
-                      setVote(true);
-                    }
-                  }}
-                />
-              </>
-            )}
+            {
+              // disable voting function for user's own comments
+              current ? (
+                <>
+                  <img
+                    className="flex-item upvote disabled-upvote"
+                    src="./images/icon-plus.svg"
+                    alt="upvote"
+                  />
+                  <span className="flex-item">{score}</span>
+                  <img
+                    className="flex-item downvote disabled-upvote"
+                    src="./images/icon-minus.svg"
+                    alt="downvote"
+                  />
+                </>
+              ) : (
+                <>
+                  <img
+                    className="flex-item upvote"
+                    src="./images/icon-plus.svg"
+                    alt="upvote"
+                    onClick={() => {
+                      if (!vote) {
+                        updateScore(id, "upvote");
+                        setVote(true);
+                      }
+                    }}
+                  />
+                  <span className="flex-item">{score}</span>
+                  <img
+                    className="flex-item downvote"
+                    src="./images/icon-minus.svg"
+                    alt="downvote"
+                    onClick={() => {
+                      if (!vote) {
+                        updateScore(id, "downvote");
+                        setVote(true);
+                      }
+                    }}
+                  />
+                </>
+              )
+            }
           </div>
           <div className="contentColumn">
             <div className="commentHeader">
@@ -198,4 +202,4 @@ const Comment = ({
         })}
     </>
   );
-};
+}

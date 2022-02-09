@@ -5,6 +5,8 @@ import DeleteModal from "./components/deleteModal";
 import NewComment from "./components/newComment";
 import JSONdata from "./data.json";
 
+// Import Comment
+
 let currentId = 5;
 
 const App = () => {
