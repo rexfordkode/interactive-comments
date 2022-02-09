@@ -1,6 +1,6 @@
 import "./deleteModal.css";
 
-export default function DeleteModal({ id, setDeleteComment, setData, data }) {
+const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
   const deleteComment = () => {
     for (let comment of data.comments) {
       if (comment.id === id) {
@@ -53,4 +53,6 @@ export default function DeleteModal({ id, setDeleteComment, setData, data }) {
       </div>
     </div>
   );
-}
+};
+
+export default DeleteModal;

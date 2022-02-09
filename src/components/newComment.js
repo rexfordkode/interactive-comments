@@ -1,7 +1,7 @@
 import "./newComment.css";
 import { useState } from "react";
 
-export default function NewComment({ addNewComment, currentUser }) {
+const NewComment = ({ addNewComment, currentUser }) => {
   const [newComment, setNewComment] = useState("");
 
   return (
@@ -36,4 +36,6 @@ export default function NewComment({ addNewComment, currentUser }) {
       </div>
     </div>
   );
-}
+};
+
+export default NewComment;
