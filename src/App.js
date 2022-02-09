@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import Comment from './components/comment';
+import Comment from "./components/comment";
 import DeleteModal from "./components/deleteModal";
 import NewComment from "./components/newComment";
-import newReply from "./components/newReply";
-
-import JSONdata from "./data";
+import JSONdata from "./data.json";
 
 // Import Comment
 
@@ -121,14 +119,13 @@ const App = () => {
       <div className="comments-column">
         {data.comments.map((comment) => {
           return (
-            /* Comment Component */
             <Comment
-              replyingTo=''
+              replyingTo=""
               addNewReply={addNewReply}
               updateComment={updateComment}
               setDeleteComment={setDeleteComment}
               updateScore={updateScore}
-              key={comment.id}  
+              key={comment.id}
               currentUser={data.currentUser}
               comment={comment.content}
               image={comment.user.image.png}
@@ -138,10 +135,8 @@ const App = () => {
               replies={comment.replies}
               id={comment.id}
             />
-            
-        );
+          );
         })}
-
         <NewComment
           addNewComment={addNewComment}
           currentUser={data.currentUser}
