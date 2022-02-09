@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
+import Comment from './components/comment';
 import DeleteModal from "./components/deleteModal";
 import NewComment from "./components/newComment";
+import newReply from "./components/newReply";
+
 import JSONdata from "./data";
 
 // Import Comment
@@ -117,9 +120,26 @@ const App = () => {
 
       <div className="comments-column">
         {data.comments.map((comment) => {
-          return {
+          return (
             /* Comment Component */
-          };
+            <Comment
+              replyingTo=''
+              addNewReply={addNewReply}
+              updateComment={updateComment}
+              setDeleteComment={setDeleteComment}
+              updateScore={updateScore}
+              key={comment.id}  
+              currentUser={data.currentUser}
+              comment={comment.content}
+              image={comment.user.image.png}
+              username={comment.user.username}
+              timeSince={comment.createdAt}
+              score={comment.score}
+              replies={comment.replies}
+              id={comment.id}
+            />
+            
+        );
         })}
 
         <NewComment

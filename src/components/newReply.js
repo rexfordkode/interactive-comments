@@ -1,7 +1,7 @@
 import './newComment.css'
 let reply;
 
-export const NewReply = (
+const newReply = (
     {
         setNewReply,
         currentUser,
@@ -36,3 +36,4 @@ export const NewReply = (
     )
 
 }
+export default newReply;

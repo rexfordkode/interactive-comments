@@ -26,26 +26,21 @@
   color: hsl(212, 24%, 26%);
 }
 
-/* .buttonsRow {
-      display: flex;
-      
-    } */
-
-/* #cancel,
-    #confirm {
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 140px;
-      height: 30px;
-      text-align: center;
-      padding: 10px;
-      border-radius: 10px;
-      margin-right: 20px;
-      margin-top: 20px;
-      color: white;
-    } */
+#cancel,
+#confirm {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 30px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: white;
+}
 
 /* added styles for buttons */
 /* ---------------------------------------------------------- */
