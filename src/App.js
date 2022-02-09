@@ -51,13 +51,13 @@ function App() {
     for (let comment of temp.comments) {
       if (comment.id === id) {
         action === "upvote" ? (comment.score += 1) : (comment.score -= 1);
-        break;
+        // break;
       }
       if (comment.replies.length > 0) {
         for (let reply of comment.replies) {
           if (reply.id === id) {
             action === "upvote" ? (reply.score += 1) : (reply.score -= 1);
-            break;
+            // break;
           }
         }
       }
