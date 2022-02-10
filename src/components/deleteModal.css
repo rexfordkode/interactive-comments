@@ -50,6 +50,14 @@
 #confirm {
   background-color: hsl(358, 79%, 66%);
 }
+#confirm:hover{
+  /* opacity: 0.95; */
+  background-color: rgb(255, 52, 52);
+}
+#cancel:hover{
+  /* opacity: 0.95; */
+  background-color: rgb(80, 79, 79);
+}
 
 .modalBackground {
   /* https://www.w3schools.com/howto/howto_css_modals.asp */
