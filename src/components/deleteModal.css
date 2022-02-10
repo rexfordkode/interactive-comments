@@ -51,6 +51,14 @@ margin-top: 10px;
   background-color: hsl(358, 79%, 66%);
 }
 
+#confirm:hover{
+  /* opacity: 0.95; */
+  background-color: rgb(255, 52, 52);
+}
+#cancel:hover{
+  /* opacity: 0.95; */
+  background-color: rgb(80, 79, 79);
+}
 .modalBackground {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
