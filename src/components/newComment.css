@@ -1,24 +1,22 @@
 .newComment {
-  display: grid;
-  grid-template-columns: 1fr 8fr 2fr;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
   margin-top: 30px;
-  column-gap: 10px;
   padding: 30px;
   border-radius: 10px;
   background-color: white;
-}
-
-.sendColumn {
-  padding-right: 50px;
 }
 
 .avatarReply {
   max-width: 40px;
   height: auto;
 }
+
 .avatar:hover {
   transform: scale(2.1);
 }
+
 .sendButton {
   font-size: large;
   color: white;
@@ -29,11 +27,14 @@
   height: 50px;
   cursor: pointer;
   position: relative;
-  left: 50px;
 }
 
 .sendButton:hover {
   opacity: 0.55;
+}
+
+.inputColumn {
+  width: 100%;
 }
 
 .replyInput {
@@ -54,29 +55,20 @@
 @media (max-width: 500px) {
   .newComment {
     display: grid;
-    background-color: white;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    padding-bottom: 80px;
-    padding-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 20px;
+    align-items: center;
+    gap: 0;
+    height: 200px;
   }
-
-  .avatarReply {
-    position: absolute;
-    left: 20px;
+  .avatarColumn {
+    grid-area: 2/1/3/2;
   }
-
+  .inputColumn {
+    grid-area: 1/1/2/4;
+  }
   .sendColumn {
-    position: absolute;
-    right: 20px;
-    bottom: 15px;
-  }
-
-  .avatarReply {
-    bottom: 15px;
-  }
-
-  .replyInput {
-    height: 90px;
+    grid-area: 2/3/3/4;
   }
 }
