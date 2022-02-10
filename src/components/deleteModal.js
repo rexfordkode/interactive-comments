@@ -56,3 +56,4 @@ const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
 };
 
 export default DeleteModal;
+
