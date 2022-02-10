@@ -1,10 +1,9 @@
+import React, { useState } from "react";
 import "./App.css";
-import JSONdata from "./data";
-import { useState } from "react";
-
 import Comment from "./components/comment";
-import NewComment from "./components/newComment";
 import DeleteModal from "./components/deleteModal";
+import NewComment from "./components/newComment";
+import JSONdata from "./data.json";
 let currentId = 5; // ¯\_(ツ)_/¯
 
 function App() {

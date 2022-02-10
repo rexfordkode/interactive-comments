@@ -43,7 +43,7 @@
   margin-left: 10px;
 }
 .avatar:hover {
-  transform: scale(3.2);
+  transform: scale(2.1);
 }
 
 .replyButton,
@@ -65,6 +65,14 @@
 .downvote,
 .updateButton {
   cursor: pointer;
+}
+
+.upvote:hover {
+    background-color: var(--blue);
+}
+
+.downvote:hover {
+    background-color: var(--blue);
 }
 
 .deleteButton {
