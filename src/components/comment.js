@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import NewReply from "./newReply";
 import "./comment.css";
 
-export default function Comment({
+const Comment = ({
   id,
   currentUser,
   replyingTo,
@@ -16,7 +16,7 @@ export default function Comment({
   updateComment,
   setDeleteComment,
   addNewReply,
-}) {
+}) => {
   const [newReply, setNewReply] = useState(false);
   //   modified
   const [upVote, setUpVote] = useState(false);
@@ -219,4 +219,4 @@ export default function Comment({
   );
 };
 
-
+export default Comment;
