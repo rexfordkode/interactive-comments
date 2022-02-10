@@ -1,20 +1,20 @@
 :root {
-    --grey-background: hsl(228, 33%, 97%);
-    --blue: hsl(238, 40%, 52%);
-    --text-color: hsl(211, 10%, 45%);
-    --username-color: hsl(212, 24%, 26%);
+  --grey-background: hsl(228, 33%, 97%);
+  --blue: hsl(238, 40%, 52%);
+  --text-color: hsl(211, 10%, 45%);
+  --username-color: hsl(212, 24%, 26%);
 }
 
 .comment {
-    display: grid;
-    grid-template-columns: 1fr 10fr;
-    grid-template-areas: "score content";
-    position: relative;
-    background-color: white;
-    padding: 30px;
-    margin-top: 20px;
-    column-gap: 10px;
-    border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-areas: "score content";
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  margin-top: 20px;
+  column-gap: 10px;
+  border-radius: 10px;
 }
 
 .scoreColumn {
@@ -29,22 +29,24 @@
 }
 
 .flex-item {
-    margin: 0 auto;
-    padding: 8px 0;
+  margin: 0 auto;
+  padding: 8px 0;
 }
 
 .avatar {
-    height: auto;
-    max-width: 30px;
+  height: auto;
+  max-width: 30px;
 }
 
-.username, .timestamp {
-    margin-left: 10px;
-  }
+.username,
+.timestamp {
+  margin-left: 10px;
+}
 
-.replyButton, .editButton {
-    position: absolute;
-    right: 30px;
+.replyButton,
+.editButton {
+  position: absolute;
+  right: 30px;
 }
 
 .deleteButton:hover,
@@ -63,17 +65,17 @@
 }
 
 .upvote:hover {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 .downvote:hover {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 .deleteButton {
-    color: hsl(358, 79%, 66%);
-    position: absolute;
-    right: 100px;
+  color: hsl(358, 79%, 66%);
+  position: absolute;
+  right: 100px;
 }
 
 .username,
@@ -94,46 +96,49 @@
 }
 
 .username {
-    color: var(--username-color);
+  color: var(--username-color);
 }
 
-.replyButton, .flex-item, .editButton, .reply-username {
-    color: var(--blue);
+.replyButton,
+.flex-item,
+.editButton,
+.reply-username {
+  color: var(--blue);
 }
 
 .commentHeader {
-    display: flex;
-    align-items: center; 
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .commentReplies {
-    display: inline-block; 
-    position: relative;
-    margin-left: 80px;
-    width: 89%;
+  display: inline-block;
+  position: relative;
+  margin-left: 80px;
+  width: 89%;
 }
 
 .verticalLine {
-    position: absolute;
-    left: -30px; 
-    top: 23px;
-    height: 90%;
-    border-left: 3px solid hsl(223, 19%, 93%);
+  position: absolute;
+  left: -30px;
+  top: 23px;
+  height: 90%;
+  border-left: 3px solid hsl(223, 19%, 93%);
 }
 
 .youTag {
-    display: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    right: 90px;
-    top:100px;
-    background-color: hsl(238, 40%, 52%);
-    text-align: center;
-    font-size: small;
-    height: 18px;
-    width: 35px;
-    color: white;
+  display: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  right: 90px;
+  top: 100px;
+  background-color: hsl(238, 40%, 52%);
+  text-align: center;
+  font-size: small;
+  height: 18px;
+  width: 35px;
+  color: white;
 }
 
 ::-moz-selection {
@@ -144,103 +149,106 @@
 }
 
 .reply-username {
-    font-weight: 900;
+  font-weight: 900;
 }
 
 .disabled-upvote {
-    cursor: default !important;
+  cursor: default !important;
 }
 
 .disabled {
-    cursor: default !important;
-    opacity: 50% !important;
+  cursor: default !important;
+  opacity: 50% !important;
 }
 
 .updateRow {
-    margin-top: 10px;
-    margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .updateButton {
-    position: absolute!important;
-    margin-right: 15px;
-    right: 0px;
-    font-size: large;
-    border-color: transparent;
-    border-radius: 10px;
-    width: 110px;
-    height: 50px;
-    background-color: hsl(238, 40%, 52%);
-    color: white;
+  position: absolute !important;
+  margin-right: 15px;
+  right: 0px;
+  font-size: large;
+  border-color: transparent;
+  border-radius: 10px;
+  width: 110px;
+  height: 50px;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
 }
 
 /* Ensuring the reply button and scores button are responsive */
 @media (max-width: 620px) {
-    .comment {
-        display: grid;
-        grid-template-rows: 2fr 1fr;
-        grid-template-columns: 1fr;
-        position: relative;
-        padding: 20px;
-        margin-top: 20px;
-        column-gap: 10px;
-        border-radius: 10px;
-        min-height: 120px;
-        background-color: white;
-    }
+  .comment {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr;
+    position: relative;
+    padding: 20px;
+    margin-top: 20px;
+    column-gap: 10px;
+    border-radius: 10px;
+    min-height: 120px;
+    background-color: white;
+  }
 
-    .scoreColumn {
-        display: flex;
-        flex-direction: row;
-        height: 40px;
-        width: 90px;
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        align-items: center;
-        justify-content: center;
-        padding-left: 10px;
-        padding-right: 10px;
-        background-color: var(--grey-background);
-    }
+  .scoreColumn {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 90px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--grey-background);
+  }
 
-    .commentReplies {
-        display: inline-block;
-        width: 95%;
-        position: relative;
-        margin-left: 15px;
-    }
+  .commentReplies {
+    display: inline-block;
+    width: 95%;
+    position: relative;
+    margin-left: 15px;
+  }
 
-    .verticalLine {
-        left: -15px; 
-    }
+  .verticalLine {
+    left: -15px;
+  }
 
-    .deleteButton, .editButton, .replyButton, .updateButton {
-        cursor: pointer;
-    }
+  .deleteButton,
+  .editButton,
+  .replyButton,
+  .updateButton {
+    cursor: pointer;
+  }
 
-    .replyButton, .editButton {
-        position: absolute;
-        right: 30px;
-        bottom: 30px;
-    }
+  .replyButton,
+  .editButton {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+  }
 
-    .deleteButton {
-        bottom: 30px;
-        right: 90px;
-    }
+  .deleteButton {
+    bottom: 30px;
+    right: 90px;
+  }
 
-    .updateRow {
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-    
+  .updateRow {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 760px) {
-    .adjust-width {
-        width: auto;
-    }
+  .adjust-width {
+    width: auto;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 370px) {

@@ -12,12 +12,13 @@
   padding-right: 50px;
 }
 
-
 .avatarReply {
   max-width: 40px;
   height: auto;
 }
-
+.avatar:hover {
+  transform: scale(2.1);
+}
 .sendButton {
   font-size: large;
   color: white;
