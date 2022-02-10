@@ -1,24 +1,24 @@
 .modal {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    color: hsl(211, 10%, 45%);
-    background-color: white;
-    border-radius: 10px;
-    height: 175px;
-    width: 350px;
-    padding: 30px;
-    position: fixed;    /* Stay in place */
-    z-index: 10;
-    align-content: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* otherwise it won't be centered */
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: white;
+  color: hsl(211, 10%, 45%);
+  border-radius: 10px;
+  width: 350px;
+  height: 210px; /* modified */
+  padding: 20px 25px;
+  z-index: 10;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  align-content: center;
+  transform: translate(-50%, -50%); /* otherwise it won't be centered */
 }
 
 .modalTitle {
-    font-size: x-large;
-    font-weight: 700;
-    color: hsl(212, 24%, 26%);
+  font-size: x-large;
+  font-weight: 700;
+  color: hsl(212, 24%, 26%);
 }
 
 .buttonsRow {
@@ -44,23 +44,24 @@
 }
 
 #cancel {
-    background-color: hsl(211, 10%, 45%);
+  background-color: hsl(211, 10%, 45%);
 }
 
 #confirm {
-    background-color: hsl(358, 79%, 66%);
+  background-color: hsl(358, 79%, 66%);
 }
 
 .modalBackground {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+  /* https://www.w3schools.com/howto/howto_css_modals.asp */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 @media (max-width: 620px) {

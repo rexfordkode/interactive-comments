@@ -2,9 +2,9 @@ import "./App.css";
 import JSONdata from "./data";
 import { useState } from "react";
 
-import Comment from "./components/Comment";
-import NewComment from "./components/NewComment";
-import DeleteModal from "./components/DeleteModal";
+import Comment from "./components/comment";
+import NewComment from "./components/newComment";
+import DeleteModal from "./components/deleteModal";
 let currentId = 5; // ¯\_(ツ)_/¯
 
 function App() {
