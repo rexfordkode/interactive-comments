@@ -1,8 +1,17 @@
 import "./newComment.css";
 import { useState } from "react";
 
-export default function NewComment({ addNewComment, currentUser }) {
+const NewComment = ({ addNewComment, currentUser }) => {
   const [newComment, setNewComment] = useState("");
+
+  const handleInput = (e) => {
+    setNewComment(e.target.value);
+  };
+
+  const handlePostComment = () => {
+    addNewComment(newComment);
+    setNewComment("");
+  };
 
   return (
     <div className="newComment">
@@ -18,22 +27,18 @@ export default function NewComment({ addNewComment, currentUser }) {
         <textarea
           className="replyInput"
           placeholder="Add a comment..."
-          onChange={(e) => {
-            setNewComment(e.target.value);
-          }}
+          value={newComment}
+          onChange={handleInput}
         ></textarea>
       </div>
 
       <div className="sendColumn">
-        <button
-          className="sendButton"
-          onClick={() => {
-            addNewComment(newComment);
-          }}
-        >
+        <button className="sendButton" onClick={handlePostComment}>
           SEND
         </button>
       </div>
     </div>
   );
-}
+};
+
+export default NewComment;
