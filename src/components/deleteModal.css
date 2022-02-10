@@ -1,77 +1,121 @@
 .modal {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    color: hsl(211, 10%, 45%);
-    background-color: white;
-    border-radius: 10px;
-    height: 175px;
-    width: 350px;
-    padding: 30px;
-    position: fixed;    /* Stay in place */
-    z-index: 10;
-    align-content: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* otherwise it won't be centered */
+  /* display: grid;
+      grid-template-rows: 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: white;
+  color: hsl(211, 10%, 45%);
+  border-radius: 10px;
+
+  width: 350px;
+  height: 180px;
+  padding: 30px;
+  z-index: 10;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  align-content: center;
+  transform: translate(-50%, -50%); /* otherwise it won't be centered */
 }
 
 .modalTitle {
-    font-size: x-large;
-    font-weight: 700;
-    color: hsl(212, 24%, 26%);
+  font-size: x-large;
+  font-weight: 700;
+  color: hsl(212, 24%, 26%);
 }
 
-.modalContent {
-    line-height: 1.3;
-}
+/* .buttonsRow {
+      display: flex;
+      
+    } */
 
+/* #cancel,
+    #confirm {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 140px;
+      height: 30px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin-right: 20px;
+      margin-top: 20px;
+      color: white;
+    } */
+
+/* added styles for buttons */
+/* ---------------------------------------------------------- */
 .buttonsRow {
-    display: flex;
-    flex-direction: row;
-    gap: 10px; 
+  /* outline: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-
-#cancel, #confirm {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 140px;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 20px;
-    color: white;
+.buttonsRow__buttons {
+  border-style: none;
+  width: 161px;
+  height: 48px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
 }
+/* ---------------------------------------------------------- */
 
 #cancel {
-    background-color: hsl(211, 10%, 45%);
+  background-color: hsl(211, 10%, 45%);
 }
 
 #confirm {
-    background-color: hsl(358, 79%, 66%);
+  background-color: hsl(358, 79%, 66%);
 }
 
 .modalBackground {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+  /* https://www.w3schools.com/howto/howto_css_modals.asp */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-@media (max-width: 620px) {
-    .modal {
-        width: 70vw; 
-    }
+/* added these changes */
+@media (max-width: 414px) {
+  .modal {
+    /* text-align: justify; */
+    width: 70vw;
+  }
 
-    #cancel, #confirm {
-        display: flex;
-        width: 100%;
-        height: 30px;
-    }
+  /* #cancel,
+            #confirm {
+                width: 20vw;
+                height: 30px;
+                display: flex;
+                /* justify-content: center;
+                align-items: center; }*/
+
+  /* added this section to align the modal */
+  .buttonsRow {
+    /* outline: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .buttonsRow__buttons {
+    border-style: none;
+    width: 110px;
+    height: 48px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+  }
 }
