@@ -51,6 +51,13 @@
     cursor: pointer;
 }
 
+.upvote:hover {
+    color: var(--blue);
+}
+
+.downvote:hover {
+    color: var(--blue);
+}
 
 .deleteButton {
     color: hsl(358, 79%, 66%);
