@@ -18,7 +18,6 @@ const Comment = ({
   addNewReply,
 }) => {
   const [newReply, setNewReply] = useState(false);
-  //   modified
   const [upVote, setUpVote] = useState(false);
   const [downVote, setDownVote] = useState(false);
   const [iconPlus, setIconPlus] = useState("./images/icon-plus.svg");
@@ -39,7 +38,7 @@ const Comment = ({
         <div className="comment">
           <div className="scoreColumn">
             {
-              // disable voting function for user's own comments
+              // Disable voting function for user's own comments
               current ? (
                 <>
                   <img

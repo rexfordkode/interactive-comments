@@ -24,7 +24,7 @@
   justify-content: center;
   background-color: var(--grey-background);
   width: 40px;
-  gap: 8px; /* modified */
+  height: 100px;
   border-radius: 10px;
 }
 
@@ -179,7 +179,6 @@
   color: white;
 }
 
-/* Ensuring the reply button and scores button are responsive */
 @media (max-width: 620px) {
   .comment {
     display: grid;
@@ -245,12 +244,14 @@
   }
 }
 
+/* Responsive for medium-sized devices */
 @media (max-width: 760px) {
   .adjust-width {
     width: auto;
   }
 }
 
+/* Responsive for small devices */
 @media (min-width: 200px) and (max-width: 370px) {
   .comment {
     padding: 20px;
