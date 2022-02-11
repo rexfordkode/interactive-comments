@@ -30,7 +30,12 @@
 
 .flex-item {
   margin: 0 auto;
-  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* outline: 2px solid red; */
+  width: 30px;
+  height: 30px;
 }
 
 .avatar {
@@ -64,12 +69,9 @@
   cursor: pointer;
 }
 
-.upvote:hover {
-  background-color: var(--blue);
-}
-
-.downvote:hover {
-  background-color: var(--blue);
+.viewervote svg path:hover {
+  cursor: pointer;
+  fill: #5357b6;
 }
 
 .deleteButton {
@@ -158,7 +160,7 @@
 
 .disabled {
   cursor: default !important;
-  opacity: 50% !important;
+  opacity: 50%;
 }
 
 .updateRow {

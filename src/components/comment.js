@@ -21,8 +21,8 @@ export default function Comment({
   //   modified
   const [vote, setVote] = useState(false);
 
-  const [iconPlusFill, setIconPlusFill] = useState("#5357b6");
-  const [iconMinusFill, setIconMinusFill] = useState("#5357b6");
+  const [iconPlusFill, setIconPlusFill] = useState("#c5c6ef");
+  const [iconMinusFill, setIconMinusFill] = useState("#c5c6ef");
 
   const [edit, setEdit] = useState(false);
   const [current, setCurrent] = useState(false);
@@ -31,7 +31,6 @@ export default function Comment({
   useEffect(() => {
     const curr = username === currentUser.username;
     setCurrent(curr);
-    console.log("something changed");
   }, [currentUser, username]);
 
   //
