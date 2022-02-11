@@ -19,10 +19,10 @@ export default function Comment({
 }) {
   const [newReply, setNewReply] = useState(false);
   //   modified
-  const [upVote, setUpVote] = useState(false);
-  const [downVote, setDownVote] = useState(false);
-  const [iconPlus, setIconPlus] = useState("./images/icon-plus.svg");
-  const [iconMinus, setIconMinus] = useState("./images/icon-minus.svg");
+  const [vote, setVote] = useState(false);
+
+  const [iconPlusFill, setIconPlusFill] = useState("#5357b6");
+  const [iconMinusFill, setIconMinusFill] = useState("#5357b6");
 
   const [edit, setEdit] = useState(false);
   const [current, setCurrent] = useState(false);
@@ -31,7 +31,10 @@ export default function Comment({
   useEffect(() => {
     const curr = username === currentUser.username;
     setCurrent(curr);
+    console.log("something changed");
   }, [currentUser, username]);
+
+  //
 
   return (
     <>
@@ -42,55 +45,78 @@ export default function Comment({
               // disable voting function for user's own comments
               current ? (
                 <>
-                  <img
-                    className="flex-item upvote disabled-upvote"
-                    src="./images/icon-plus.svg"
-                    alt="upvote"
-                  />
+                  <div className="flex-item upvote ">
+                    <svg
+                      width="11"
+                      height="11"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.33 10.896c.137 0 .255-.05.354-.149.1-.1.149-.217.149-.354V7.004h3.315c.136 0 .254-.05.354-.149.099-.1.148-.217.148-.354V5.272a.483.483 0 0 0-.148-.354.483.483 0 0 0-.354-.149H6.833V1.4a.483.483 0 0 0-.149-.354.483.483 0 0 0-.354-.149H4.915a.483.483 0 0 0-.354.149c-.1.1-.149.217-.149.354v3.37H1.08a.483.483 0 0 0-.354.15c-.1.099-.149.217-.149.353v1.23c0 .136.05.254.149.353.1.1.217.149.354.149h3.333v3.39c0 .136.05.254.15.353.098.1.216.149.353.149H6.33Z"
+                        fill="#C5C6EF"
+                      />
+                    </svg>
+                  </div>
+
                   <span className="flex-item">{score}</span>
-                  <img
-                    className="flex-item downvote disabled-upvote"
-                    src="./images/icon-minus.svg"
-                    alt="downvote"
-                  />
+                  <div className="flex-item updown">
+                    <svg
+                      width="11"
+                      height="3"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.256 2.66c.204 0 .38-.056.53-.167.148-.11.222-.243.222-.396V.722c0-.152-.074-.284-.223-.395a.859.859 0 0 0-.53-.167H.76a.859.859 0 0 0-.53.167C.083.437.009.57.009.722v1.375c0 .153.074.285.223.396a.859.859 0 0 0 .53.167h8.495Z"
+                        fill="#C5C6EF"
+                      />
+                    </svg>
+                  </div>
                 </>
               ) : (
                 <>
-                  <img
-                    className="flex-item upvote"
-                    src={iconPlus}
-                    alt="upvote"
-                    onClick={() => {
-                      if (!upVote) {
-                        updateScore(id, "upvote");
-                        setUpVote(true);
-                        setIconPlus("./images/icon-plus-active.svg");
-                        setIconMinus("./images/icon-minus.svg");
-                      } else {
-                        updateScore(id, "downvote");
-                        setIconPlus("./images/icon-plus.svg");
-                        setUpVote(false);
-                      }
-                    }}
-                  />
+                  <div className="flex-item upvote viewervote">
+                    <svg
+                      width="11"
+                      height="11"
+                      xmlns="http://www.w3.org/2000/svg"
+                      onClick={() => {
+                        if (!vote) {
+                          updateScore(id, "upvote");
+                          setVote(true);
+                          setIconPlusFill("#C5C6EF");
+                          setIconMinusFill("#C5C6EF");
+                        }
+                      }}
+                    >
+                      <path
+                        d="M6.33 10.896c.137 0 .255-.05.354-.149.1-.1.149-.217.149-.354V7.004h3.315c.136 0 .254-.05.354-.149.099-.1.148-.217.148-.354V5.272a.483.483 0 0 0-.148-.354.483.483 0 0 0-.354-.149H6.833V1.4a.483.483 0 0 0-.149-.354.483.483 0 0 0-.354-.149H4.915a.483.483 0 0 0-.354.149c-.1.1-.149.217-.149.354v3.37H1.08a.483.483 0 0 0-.354.15c-.1.099-.149.217-.149.353v1.23c0 .136.05.254.149.353.1.1.217.149.354.149h3.333v3.39c0 .136.05.254.15.353.098.1.216.149.353.149H6.33Z"
+                        fill={iconPlusFill}
+                      />
+                    </svg>
+                  </div>
+
                   <span className="flex-item">{score}</span>
-                  <img
-                    className="flex-item downvote"
-                    src={iconMinus}
-                    alt="downvote"
-                    onClick={() => {
-                      if (!downVote) {
-                        updateScore(id, "downvote");
-                        setDownVote(true);
-                        setIconMinus("./images/icon-minus-active.svg");
-                        setIconPlus("./images/icon-plus.svg");
-                      } else {
-                        updateScore(id, "upvote");
-                        setIconMinus("./images/icon-minus.svg");
-                        setDownVote(false);
-                      }
-                    }}
-                  />
+
+                  <div className="flex-item updown viewervote">
+                    <svg
+                      width="11"
+                      height="3"
+                      xmlns="http://www.w3.org/2000/svg"
+                      onClick={() => {
+                        if (!vote) {
+                          updateScore(id, "downvote");
+                          setVote(true);
+                          setIconMinusFill("#C5C6EF");
+                          setIconPlusFill("#C5C6EF");
+                        }
+                      }}
+                    >
+                      <path
+                        d="M9.256 2.66c.204 0 .38-.056.53-.167.148-.11.222-.243.222-.396V.722c0-.152-.074-.284-.223-.395a.859.859 0 0 0-.53-.167H.76a.859.859 0 0 0-.53.167C.083.437.009.57.009.722v1.375c0 .153.074.285.223.396a.859.859 0 0 0 .53.167h8.495Z"
+                        fill={iconMinusFill}
+                      />
+                    </svg>
+                  </div>
                 </>
               )
             }
@@ -217,6 +243,4 @@ export default function Comment({
         })}
     </>
   );
-};
-
-
+}
