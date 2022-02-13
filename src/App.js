@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Comment from "./components/comment";
 import DeleteModal from "./components/deleteModal";
@@ -9,6 +9,19 @@ let currentId = 5;
 const App = () => {
   const [data, setData] = useState(JSONdata);
   const [deleteComment, setDeleteComment] = useState(false);
+
+  //Gets data from Local storage upon reload
+  useEffect(() => {
+    return localStorage.getItem("comments") !== null
+      ? setData(JSON.parse(localStorage.getItem("comments")))
+      : data;
+  }, []);
+
+  //Stores data in the Local Storage
+  useEffect(() => {
+    localStorage.setItem("comments", JSON.stringify(data));
+    console.log("data changed");
+  }, [data]);
 
   // Add new reply
   const addNewReply = (id, content) => {
@@ -89,6 +102,7 @@ const App = () => {
         }
       }
     }
+
     setData({ ...temp });
   };
 
