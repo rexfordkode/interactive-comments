@@ -31,8 +31,9 @@
   height: auto;
 }
 
+
 .avatar:hover {
-  transform: scale(2.25);
+  transform: scale(2.05);
 }
 
 .sendButton {
