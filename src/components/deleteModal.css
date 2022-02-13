@@ -1,6 +1,6 @@
 .modal {
   /* display: grid;
-    grid-template-rows: 1fr 1fr 1fr; */
+      grid-template-rows: 1fr 1fr 1fr; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,25 +27,25 @@
 }
 
 /* .buttonsRow {
-    display: flex;
-    
-  } */
+      display: flex;
+      
+    } */
 
 /* #cancel,
-  #confirm {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-    height: 30px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    margin-right: 20px;
-    margin-top: 20px;
-    color: white;
-  } */
+    #confirm {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 140px;
+      height: 30px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin-right: 20px;
+      margin-top: 20px;
+      color: white;
+    } */
 
 /* added styles for buttons */
 /* ---------------------------------------------------------- */
@@ -73,6 +73,14 @@
 #confirm {
   background-color: hsl(358, 79%, 66%);
 }
+#confirm:hover {
+  /* opacity: 0.95; */
+  background-color: rgb(255, 52, 52);
+}
+#cancel:hover {
+  /* opacity: 0.95; */
+  background-color: rgb(80, 79, 79);
+}
 
 .modalBackground {
   /* https://www.w3schools.com/howto/howto_css_modals.asp */
@@ -87,35 +95,36 @@
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-/* added these changes */
-@media (max-width: 414px) {
+@media (max-width: 620px) {
+  /* modified */
   .modal {
-    /* text-align: justify; */
-    width: 70vw;
+    width: 90vw;
   }
-
-  /* #cancel,
-          #confirm {
-              width: 20vw;
-              height: 30px;
-              display: flex;
-              /* justify-content: center;
-              align-items: center; }*/
-
-  /* added this section to align the modal */
   .buttonsRow {
-    /* outline: 2px solid green; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: 15px;
   }
+  #cancel,
+  #confirm {
+    width: 100%;
+    height: 30px;
+    display: flex;
+  }
+}
 
-  .buttonsRow__buttons {
-    border-style: none;
-    width: 110px;
-    height: 48px;
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
+@media (min-width: 200px) and (max-width: 370px) {
+  .modal {
+    width: 92vw;
+    height: 230px;
+    padding: 20px;
+  }
+  .modalTitle {
+    font-size: large;
+  }
+  .buttonsRow {
+    margin-top: 10px;
+  }
+  #cancel,
+  #confirm {
+    font-size: 13px;
   }
 }

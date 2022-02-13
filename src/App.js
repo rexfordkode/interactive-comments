@@ -1,11 +1,10 @@
+import React, { useState } from "react";
 import "./App.css";
-import JSONdata from "./data";
-import { useState } from "react";
-
-import Comment from "./components/Comment";
-import NewComment from "./components/NewComment";
-import DeleteModal from "./components/DeleteModal";
-let currentId = 5; // ¯\_(ツ)_/¯
+import Comment from "./components/comment";
+import DeleteModal from "./components/deleteModal";
+import NewComment from "./components/newComment";
+import JSONdata from "./data.json";
+let currentId = 5; 
 
 function App() {
   const [data, setData] = useState(JSONdata);
@@ -51,13 +50,13 @@ function App() {
     for (let comment of temp.comments) {
       if (comment.id === id) {
         action === "upvote" ? (comment.score += 1) : (comment.score -= 1);
-        // break;
+        break;
       }
       if (comment.replies.length > 0) {
         for (let reply of comment.replies) {
           if (reply.id === id) {
             action === "upvote" ? (reply.score += 1) : (reply.score -= 1);
-            // break;
+            break;
           }
         }
       }
