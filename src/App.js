@@ -20,7 +20,6 @@ const App = () => {
   //Stores data in the Local Storage
   useEffect(() => {
     localStorage.setItem("comments", JSON.stringify(data));
-    console.log("data changed");
   }, [data]);
 
   // Add new reply
