@@ -15,6 +15,24 @@
   margin-top: 20px;
   column-gap: 10px;
   border-radius: 10px;
+  animation: come-in 1s ease-in-out;
+}
+
+@keyframes come-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  75% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .scoreColumn {
@@ -24,13 +42,18 @@
   justify-content: center;
   background-color: var(--grey-background);
   width: 40px;
-  gap: 8px; /* modified */
+  height: 100px;
   border-radius: 10px;
 }
 
 .flex-item {
   margin: 0 auto;
-  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* outline: 2px solid red; */
+  width: 30px;
+  height: 30px;
 }
 
 .avatar {
@@ -64,12 +87,9 @@
   cursor: pointer;
 }
 
-.upvote:hover {
-  background-color: var(--blue);
-}
-
-.downvote:hover {
-  background-color: var(--blue);
+.viewervote svg path:hover {
+  cursor: pointer;
+  fill: #5357b6;
 }
 
 .deleteButton {
@@ -125,6 +145,7 @@
   top: 23px;
   height: 90%;
   border-left: 3px solid hsl(223, 19%, 93%);
+  animation: come-in 1s ease-in-out;
 }
 
 .youTag {
@@ -158,7 +179,7 @@
 
 .disabled {
   cursor: default !important;
-  opacity: 50% !important;
+  opacity: 50%;
 }
 
 .updateRow {
@@ -179,7 +200,6 @@
   color: white;
 }
 
-/* Ensuring the reply button and scores button are responsive */
 @media (max-width: 620px) {
   .comment {
     display: grid;
@@ -245,12 +265,14 @@
   }
 }
 
+/* Responsive for medium-sized devices */
 @media (max-width: 760px) {
   .adjust-width {
     width: auto;
   }
 }
 
+/* Responsive for small devices */
 @media (min-width: 200px) and (max-width: 370px) {
   .comment {
     padding: 20px;

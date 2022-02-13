@@ -38,15 +38,25 @@ const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
     <div className="modalBackground">
       <div className="modal">
         <div className="modalTitle">Delete comment</div>
-        <div className="modalContent">
+        <div>
           Are you sure you want to delete this comment? This will remove the
           comment and can't be undone.
         </div>
         <div className="buttonsRow">
-          <button id="cancel" onClick={() => setDeleteComment(false)}>
+          {/* changed <span> into <button> */}
+          {/* added a button class */}
+          <button
+            id="cancel"
+            className="buttonsRow__buttons "
+            onClick={() => setDeleteComment(false)}
+          >
             NO, CANCEL
           </button>
-          <button id="confirm" onClick={() => deleteComment()}>
+          <button
+            id="confirm"
+            className="buttonsRow__buttons "
+            onClick={() => deleteComment()}
+          >
             YES, DELETE
           </button>
         </div>

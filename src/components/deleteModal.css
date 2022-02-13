@@ -1,18 +1,23 @@
 .modal {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  /* display: grid;
+      grid-template-rows: 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background-color: white;
   color: hsl(211, 10%, 45%);
   border-radius: 10px;
+
   width: 350px;
-  height: 210px; /* modified */
+  height: 210px;
   padding: 20px 25px;
   z-index: 10;
   position: fixed;
   left: 50%;
   top: 50%;
   align-content: center;
-  transform: translate(-50%, -50%); /* otherwise it won't be centered */
+  transform: translate(-50%, -50%);
 }
 
 .modalTitle {
@@ -21,27 +26,32 @@
   color: hsl(212, 24%, 26%);
 }
 
-.buttonsRow {
-  display: flex;
-  gap: 10px; /* modified */
-  flex-direction: row;
-  align-items: center;
-}
+/* .buttonsRow {
+      display: flex;
+      
+    } */
 
-/* modified */
-#cancel,
-#confirm {
-  outline: 0;
-  border: 0;
-  color: white;
-  border-radius: 5px;
+
+
+/* added styles for buttons */
+/* ---------------------------------------------------------- */
+.buttonsRow {
+  /* outline: 2px solid red; */
   display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 10px 0;
-  margin-top: 10px;
 }
+.buttonsRow__buttons {
+  border-style: none;
+  width: 161px;
+  height: 48px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+/* ---------------------------------------------------------- */
 
 #cancel {
   background-color: hsl(211, 10%, 45%);
@@ -50,30 +60,29 @@
 #confirm {
   background-color: hsl(358, 79%, 66%);
 }
-#confirm:hover{
+#confirm:hover {
   /* opacity: 0.95; */
   background-color: rgb(255, 52, 52);
 }
-#cancel:hover{
+#cancel:hover {
   /* opacity: 0.95; */
   background-color: rgb(80, 79, 79);
 }
 
 .modalBackground {
-  /* https://www.w3schools.com/howto/howto_css_modals.asp */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Responsive for medium-sized devices */
 @media (max-width: 620px) {
-  /* modified */
   .modal {
     width: 90vw;
   }
@@ -88,6 +97,7 @@
   }
 }
 
+/* Responsive for small devices */
 @media (min-width: 200px) and (max-width: 370px) {
   .modal {
     width: 92vw;
