@@ -20,7 +20,10 @@ const App = () => {
         comment.replies.push({
           id: currentId + 1,
           content: content,
-          createdAt: "Just now",
+          createdAt: new Date().toLocaleString("en-us", {
+            hour: "numeric",
+            minute: "numeric",
+          }),
           score: 0,
           replyingTo: comment.user.username,
           user: { ...data.currentUser },
@@ -33,7 +36,10 @@ const App = () => {
             comment.replies.push({
               id: currentId + 1,
               content: content,
-              createdAt: "Just now",
+              createdAt: new Date().toLocaleString("en-us", {
+                hour: "numeric",
+                minute: "numeric",
+              }),
               score: 0,
               replyingTo: reply.user.username,
               user: { ...data.currentUser },
@@ -94,7 +100,10 @@ const App = () => {
     temp.comments.push({
       id: currentId + 1,
       content: content,
-      createdAt: "Just now",
+      createdAt: new Date().toLocaleString("en-us", {
+        hour: "numeric",
+        minute: "numeric",
+      }),
       score: 0,
       user: { ...data.currentUser },
       replies: [],
