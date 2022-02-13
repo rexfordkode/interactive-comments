@@ -15,6 +15,24 @@
   margin-top: 20px;
   column-gap: 10px;
   border-radius: 10px;
+  animation: come-in 1s ease-in-out;
+}
+
+@keyframes come-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  75% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .scoreColumn {
@@ -125,6 +143,7 @@
   top: 23px;
   height: 90%;
   border-left: 3px solid hsl(223, 19%, 93%);
+  animation: come-in 1s ease-in-out;
 }
 
 .youTag {
