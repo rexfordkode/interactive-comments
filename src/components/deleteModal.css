@@ -1,9 +1,14 @@
 .modal {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  /* display: grid;
+      grid-template-rows: 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background-color: white;
   color: hsl(211, 10%, 45%);
   border-radius: 10px;
+
   width: 350px;
   height: 210px;
   padding: 20px 25px;
@@ -21,26 +26,32 @@
   color: hsl(212, 24%, 26%);
 }
 
+/* .buttonsRow {
+      display: flex;
+      
+    } */
+
+
+
+/* added styles for buttons */
+/* ---------------------------------------------------------- */
 .buttonsRow {
+  /* outline: 2px solid red; */
   display: flex;
   gap: 10px;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
-
-#cancel,
-#confirm {
-  outline: 0;
-  border: 0;
+.buttonsRow__buttons {
+  border-style: none;
+  width: 161px;
+  height: 48px;
   color: white;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 10px 0;
-  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
 }
+/* ---------------------------------------------------------- */
 
 #cancel {
   background-color: hsl(211, 10%, 45%);
@@ -49,12 +60,12 @@
 #confirm {
   background-color: hsl(358, 79%, 66%);
 }
-
 #confirm:hover {
+  /* opacity: 0.95; */
   background-color: rgb(255, 52, 52);
 }
-
 #cancel:hover {
+  /* opacity: 0.95; */
   background-color: rgb(80, 79, 79);
 }
 
