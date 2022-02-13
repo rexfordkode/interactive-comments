@@ -72,9 +72,7 @@
 
 /* Responsive for medium-sized devices */
 @media (max-width: 620px) {
-  .modal {
-    width: 90vw;
-  }
+
   .buttonsRow {
     margin-top: 15px;
   }
