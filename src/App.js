@@ -10,17 +10,17 @@ const App = () => {
   const [data, setData] = useState(JSONdata);
   const [deleteComment, setDeleteComment] = useState(false);
 
-  //Gets data from Local storage upon reload
-  // useEffect(() => {
-  //   return localStorage.getItem("comments") !== null
-  //     ? setData(JSON.parse(localStorage.getItem("comments")))
-  //     : data;
-  // }, []);
+  // Gets data from Local storage upon reload
+  useEffect(() => {
+    return localStorage.getItem("comments") !== null
+      ? setData(JSON.parse(localStorage.getItem("comments")))
+      : data;
+  }, []);
 
-  // //Stores data in the Local Storage
-  // useEffect(() => {
-  //   localStorage.setItem("comments", JSON.stringify(data));
-  // }, [data]);
+  //Stores data in the Local Storage
+  useEffect(() => {
+    localStorage.setItem("comments", JSON.stringify(data));
+  }, [data]);
 
   // Add new reply
   const addNewReply = (id, content) => {
