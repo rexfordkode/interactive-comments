@@ -17,7 +17,7 @@
   height: auto;
 }
 .avatar:hover {
-  transform: scale(2.1);
+  transform: scale(2.05);
 }
 .sendButton {
   font-size: large;
