@@ -21,7 +21,6 @@
   color: hsl(212, 24%, 26%);
 }
 
-
 .buttonsRow {
   display: flex;
   gap: 10px;
@@ -73,6 +72,7 @@
 
 /* Responsive for medium-sized devices */
 @media (max-width: 620px) {
+
   .buttonsRow {
     margin-top: 15px;
   }
