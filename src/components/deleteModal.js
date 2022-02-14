@@ -1,6 +1,7 @@
 import "./deleteModal.css";
 
 const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
+  
   const deleteComment = () => {
     for (let comment of data.comments) {
       if (comment.id === id) {
@@ -33,6 +34,7 @@ const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
     }
     setDeleteComment(false);
   };
+  
 
   return (
     <div className="modalBackground">

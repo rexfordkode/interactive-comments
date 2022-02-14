@@ -1,7 +1,18 @@
 import "./newComment.css";
 let reply;
 
+
+
 const NewReply = ({ setNewReply, parentId, addNewReply, currentUser }) => {
+  const handleKeyDel = () =>{
+    const inputSelect = document.querySelector(".replyInput")
+    inputSelect.addEventListener('keyup', (event) =>{
+      if(event.keyCode === 13){
+      NewReply(event.target.value)
+      setNewReply('')
+    }
+    })
+  }
   return (
     <div className="newComment">
       <div className="avatarColumn">
@@ -15,10 +26,11 @@ const NewReply = ({ setNewReply, parentId, addNewReply, currentUser }) => {
       <div className="inputColumn">
         <textarea
           className="replyInput"
-          placeholder="Add a comment..."
+          placeholder="Add a reply..."
           onChange={(e) => {
             reply = e.target.value;
           }}
+          onKeyDown={handleKeyDel}
         ></textarea>
       </div>
 
@@ -28,6 +40,7 @@ const NewReply = ({ setNewReply, parentId, addNewReply, currentUser }) => {
           onClick={() => {
             addNewReply(parentId, reply);
             setNewReply(false);
+            
           }}
         >
           REPLY
