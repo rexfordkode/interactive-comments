@@ -143,6 +143,7 @@
   top: 23px;
   height: 90%;
   border-left: 3px solid hsl(223, 19%, 93%);
+  animation: come-in 1s ease in;
 }
 
 .youTag {
