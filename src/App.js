@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Comment from "./components/comment";
@@ -102,6 +101,7 @@ const App = () => {
         }
       }
     }
+
     setData({ ...temp });
   };
 

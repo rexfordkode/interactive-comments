@@ -1,40 +1,24 @@
 .newComment {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 8fr 2fr;
   margin-top: 30px;
+  column-gap: 10px;
   padding: 30px;
   border-radius: 10px;
   background-color: white;
-  animation: come-in 1s ease-in-out;
 }
 
-@keyframes come-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-
-  75% {
-    opacity: 0;
-    transform: translateY(-50%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.sendColumn {
+  padding-right: 50px;
 }
 
 .avatarReply {
   max-width: 40px;
   height: auto;
 }
-
 .avatar:hover {
   transform: scale(2.1);
 }
-
 .sendButton {
   font-size: large;
   color: white;
@@ -45,14 +29,11 @@
   height: 50px;
   cursor: pointer;
   position: relative;
+  left: 50px;
 }
 
 .sendButton:hover {
   opacity: 0.55;
-}
-
-.inputColumn {
-  width: 100%;
 }
 
 .replyInput {
