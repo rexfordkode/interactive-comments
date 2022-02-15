@@ -1,6 +1,7 @@
 import "./deleteModal.css";
 
 const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
+  // Delete Modal function
   const deleteComment = () => {
     for (let comment of data.comments) {
       if (comment.id === id) {
@@ -43,8 +44,6 @@ const DeleteModal = ({ id, setDeleteComment, setData, data }) => {
           comment and can't be undone.
         </div>
         <div className="buttonsRow">
-          {/* changed <span> into <button> */}
-          {/* added a button class */}
           <button
             id="cancel"
             className="buttonsRow__buttons "

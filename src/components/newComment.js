@@ -13,6 +13,7 @@ const NewComment = ({ addNewComment, currentUser }) => {
     setNewComment("");
   };
 
+  // On key press enter to send message
   const handleKeyPress = () => {
     const inputSelect = document.querySelector(".replyInput");
     inputSelect.addEventListener("keyup", (event) => {

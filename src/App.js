@@ -4,13 +4,14 @@ import Comment from "./components/comment";
 import DeleteModal from "./components/deleteModal";
 import NewComment from "./components/newComment";
 import JSONdata from "./data.json";
+// Next/Current Id
 let currentId = 5;
 
 const App = () => {
   const [data, setData] = useState(JSONdata);
   const [deleteComment, setDeleteComment] = useState(false);
 
-  //Gets data from Local storage upon reload
+  // Gets data from Local storage upon reload
   useEffect(() => {
     return localStorage.getItem("comments") !== null
       ? setData(JSON.parse(localStorage.getItem("comments")))
@@ -101,7 +102,6 @@ const App = () => {
         }
       }
     }
-
     setData({ ...temp });
   };
 

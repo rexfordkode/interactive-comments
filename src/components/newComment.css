@@ -1,24 +1,20 @@
 .newComment {
-  display: grid;
-  grid-template-columns: 1fr 8fr 2fr;
+  display: flex;
+  gap: 15px;
   margin-top: 30px;
-  column-gap: 10px;
   padding: 30px;
   border-radius: 10px;
   background-color: white;
 }
 
-.sendColumn {
-  padding-right: 50px;
+.avatarReply {
+  width: 40px;
 }
 
-.avatarReply {
-  max-width: 40px;
-  height: auto;
-}
 .avatar:hover {
-  transform: scale(2.1);
+  transform: scale(2.05);
 }
+
 .sendButton {
   font-size: large;
   color: white;
@@ -29,11 +25,14 @@
   height: 50px;
   cursor: pointer;
   position: relative;
-  left: 50px;
 }
 
 .sendButton:hover {
   opacity: 0.55;
+}
+
+.inputColumn {
+  flex-grow: 1;
 }
 
 .replyInput {
@@ -41,7 +40,7 @@
   resize: none;
   border: 2px solid hsl(223, 19%, 93%);
   width: 100%;
-  padding: 5px;
+  padding: 8px 15px;
   height: 90px;
   border-radius: 10px;
 }
@@ -51,11 +50,11 @@
   border: 1px solid hsl(238, 40%, 52%);
 }
 
-/* Responsive for small devices */
+/* Responsive for small and medium devices */
 @media (max-width: 500px) {
   .newComment {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     padding: 20px;
     align-items: center;
@@ -66,9 +65,9 @@
     grid-area: 2/1/3/2;
   }
   .inputColumn {
-    grid-area: 1/1/2/4;
+    grid-area: 1/1/2/5;
   }
   .sendColumn {
-    grid-area: 2/3/3/4;
+    grid-area: 2/4/3/5;
   }
 }

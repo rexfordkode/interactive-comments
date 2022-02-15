@@ -15,6 +15,7 @@
   margin-top: 20px;
   column-gap: 10px;
   border-radius: 10px;
+  animation: come-in 1s ease-in;
 }
 
 .scoreColumn {
@@ -24,7 +25,7 @@
   justify-content: center;
   background-color: var(--grey-background);
   width: 40px;
-  gap: 8px; /* modified */
+  height: 90px;
   border-radius: 10px;
 }
 
@@ -33,7 +34,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* outline: 2px solid red; */
   width: 30px;
   height: 30px;
 }
@@ -118,7 +118,7 @@
   display: inline-block;
   position: relative;
   margin-left: 80px;
-  width: 89%;
+  width: calc(100% - 80px);
 }
 
 .verticalLine {
@@ -127,6 +127,7 @@
   top: 23px;
   height: 90%;
   border-left: 3px solid hsl(223, 19%, 93%);
+  animation: come-in 1s ease-in;
 }
 
 .youTag {
@@ -143,9 +144,6 @@
   color: white;
 }
 
-::-moz-selection {
-  background: hsl(240, 6%, 90%);
-}
 ::selection {
   background: hsl(240, 6%, 90%);
 }
@@ -181,8 +179,25 @@
   color: white;
 }
 
-/* Ensuring the reply button and scores button are responsive */
-@media (max-width: 620px) {
+@keyframes come-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  75% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for medium-sized devices */
+@media (max-width: 650px) {
   .comment {
     display: grid;
     grid-template-rows: 2fr 1fr;
@@ -213,7 +228,7 @@
 
   .commentReplies {
     display: inline-block;
-    width: 95%;
+    width: calc(100% - 15px);
     position: relative;
     margin-left: 15px;
   }
@@ -245,15 +260,14 @@
     margin-top: 10px;
     margin-bottom: 20px;
   }
-}
 
-@media (max-width: 760px) {
   .adjust-width {
     width: auto;
   }
 }
 
-@media (min-width: 200px) and (max-width: 370px) {
+/* Responsive for small devices */
+@media (max-width: 370px) {
   .comment {
     padding: 20px;
   }
