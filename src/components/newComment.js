@@ -13,6 +13,16 @@ const NewComment = ({ addNewComment, currentUser }) => {
     setNewComment("");
   };
 
+  const handleKeyPress = () => {
+    const inputSelect = document.querySelector(".replyInput");
+    inputSelect.addEventListener("keyup", (event) => {
+      if (event.keyCode === 13) {
+        addNewComment(event.target.value);
+        setNewComment("");
+      }
+    });
+  };
+
   return (
     <div className="newComment">
       <div className="avatarColumn">
@@ -29,6 +39,7 @@ const NewComment = ({ addNewComment, currentUser }) => {
           placeholder="Add a comment..."
           value={newComment}
           onChange={handleInput}
+          onKeyDown={handleKeyPress}
         ></textarea>
       </div>
 

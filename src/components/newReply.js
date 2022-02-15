@@ -2,6 +2,16 @@ import "./newComment.css";
 let reply;
 
 const NewReply = ({ setNewReply, parentId, addNewReply, currentUser }) => {
+  const handleKeyPress = () => {
+    const inputSelect = document.querySelector(".replyInput");
+    inputSelect.addEventListener("keyup", (event) => {
+      if (event.keyCode === 13) {
+        addNewReply(reply);
+        setNewReply("");
+      }
+    });
+  };
+
   return (
     <div className="newComment">
       <div className="avatarColumn">
@@ -19,6 +29,7 @@ const NewReply = ({ setNewReply, parentId, addNewReply, currentUser }) => {
           onChange={(e) => {
             reply = e.target.value;
           }}
+          onKeyDown={handleKeyPress}
         ></textarea>
       </div>
 
