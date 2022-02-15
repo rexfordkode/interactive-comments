@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./newComment.css";
 let reply;
 
@@ -7,6 +8,13 @@ export default function NewReply({
   addNewReply,
   currentUser,
 }) {
+=======
+import React from "react";
+import "./newComment.css";
+let reply;
+
+const NewReply = ({ setNewReply, parentId, addNewReply, currentUser }) => {
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
   return (
     <div className="newComment">
       <div className="avatarColumn">
@@ -40,4 +48,10 @@ export default function NewReply({
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+};
+
+export default NewReply;
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc

@@ -1,4 +1,5 @@
 .newComment {
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 8fr 2fr;
   margin-top: 30px;
@@ -12,12 +13,47 @@
   padding-right: 50px;
 }
 
+=======
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: white;
+  animation: come-in 1s ease-in-out;
+}
+
+@keyframes come-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  75% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
 
 .avatarReply {
   max-width: 40px;
   height: auto;
 }
 
+<<<<<<< HEAD
+=======
+.avatar:hover {
+  transform: scale(2.1);
+}
+
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
 .sendButton {
   font-size: large;
   color: white;
@@ -28,7 +64,18 @@
   height: 50px;
   cursor: pointer;
   position: relative;
+<<<<<<< HEAD
   left: 50px;
+=======
+}
+
+.sendButton:hover {
+  opacity: 0.55;
+}
+
+.inputColumn {
+  width: 100%;
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
 }
 
 .replyInput {
@@ -46,6 +93,7 @@
   border: 1px solid hsl(238, 40%, 52%);
 }
 
+<<<<<<< HEAD
 @media (max-width: 500px) {
   .newComment {
     display: grid;
@@ -73,5 +121,26 @@
 
   .replyInput {
     height: 90px;
+=======
+/* Responsive for small devices */
+@media (max-width: 500px) {
+  .newComment {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 20px;
+    align-items: center;
+    gap: 0;
+    height: 200px;
+  }
+  .avatarColumn {
+    grid-area: 2/1/3/2;
+  }
+  .inputColumn {
+    grid-area: 1/1/2/4;
+  }
+  .sendColumn {
+    grid-area: 2/3/3/4;
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
   }
 }

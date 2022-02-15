@@ -4,16 +4,25 @@ import Comment from "./components/comment";
 import DeleteModal from "./components/deleteModal";
 import NewComment from "./components/newComment";
 import JSONdata from "./data.json";
+<<<<<<< HEAD
 
 // Import Comment
 
 let currentId = 5;
 
+=======
+let currentId = 5;
+
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
 const App = () => {
   const [data, setData] = useState(JSONdata);
   const [deleteComment, setDeleteComment] = useState(false);
 
+<<<<<<< HEAD
   // Add New Reply
+=======
+  // Add new reply
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
   const addNewReply = (id, content) => {
     if (!/\S/.test(content)) return;
     let temp = data;
@@ -21,11 +30,22 @@ const App = () => {
     for (let comment of temp.comments) {
       if (comment.id === id) {
         comment.replies.push({
+<<<<<<< HEAD
           'id': currentId + 1,
           'content': content,
           'createdAt': "Just now",
           'score': 0,
           'replyingTo': comment.user.username,
+=======
+          id: currentId + 1,
+          content: content,
+          createdAt: new Date().toLocaleString("en-us", {
+            hour: "numeric",
+            minute: "numeric",
+          }),
+          score: 0,
+          replyingTo: comment.user.username,
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
           user: { ...data.currentUser },
         });
         break;
@@ -34,12 +54,24 @@ const App = () => {
         for (let reply of comment.replies) {
           if (reply.id === id) {
             comment.replies.push({
+<<<<<<< HEAD
               'id': currentId + 1,
               'content': content,
               'createdAt': "Just now",
               'score': 0,
               'replyingTo': reply.user.username,
               'user': { ...data.currentUser },
+=======
+              id: currentId + 1,
+              content: content,
+              createdAt: new Date().toLocaleString("en-us", {
+                hour: "numeric",
+                minute: "numeric",
+              }),
+              score: 0,
+              replyingTo: reply.user.username,
+              user: { ...data.currentUser },
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
             });
             break;
           }
@@ -49,7 +81,11 @@ const App = () => {
     setData({ ...temp });
   };
 
+<<<<<<< HEAD
   // Update Score
+=======
+  // Update score
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
   const updateScore = (id, action) => {
     let temp = data;
     for (let comment of temp.comments) {
@@ -69,7 +105,11 @@ const App = () => {
     setData({ ...temp });
   };
 
+<<<<<<< HEAD
   // Update Comment
+=======
+  // Update comment
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
   const updateComment = (updatedContent, id) => {
     let temp = data;
     for (let comment of temp.comments) {
@@ -89,18 +129,34 @@ const App = () => {
     setData({ ...temp });
   };
 
+<<<<<<< HEAD
   // Add New Comment
+=======
+  // Add/Post new comment
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
   const addNewComment = (content) => {
     if (!/\S/.test(content)) return;
     let temp = data;
     currentId += 1;
     temp.comments.push({
+<<<<<<< HEAD
       'id': currentId + 1,
       'content': content,
       'createdAt': "Just now",
       'score': 0,
       'user': { ...data.currentUser },
       'replies': [],
+=======
+      id: currentId + 1,
+      content: content,
+      createdAt: new Date().toLocaleString("en-us", {
+        hour: "numeric",
+        minute: "numeric",
+      }),
+      score: 0,
+      user: { ...data.currentUser },
+      replies: [],
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
     });
     setData({ ...temp });
   };
@@ -116,7 +172,11 @@ const App = () => {
         />
       )}
 
+<<<<<<< HEAD
       <div className="comments-column">
+=======
+      <main className="comments-column">
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
         {data.comments.map((comment) => {
           return (
             <Comment
@@ -141,7 +201,11 @@ const App = () => {
           addNewComment={addNewComment}
           currentUser={data.currentUser}
         />
+<<<<<<< HEAD
       </div>
+=======
+      </main>
+>>>>>>> 618263333564604fc89367e44263a26f53abe9bc
     </>
   );
 };
